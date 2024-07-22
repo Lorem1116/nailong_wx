@@ -1,0 +1,133 @@
+<view class="container">
+  <view class="profile">
+    <!-- 头像 -->
+    <view class="avatar-container">
+      <image class="avatar" wx:if="{{!userInfo.avatarUrl}}" bindtap="closeTank" src="/static/image/default.png"></image>
+      <image wx:if="{{userInfo.avatarUrl}}" class="avatar" src="{{userInfo.avatarUrl}}"></image>
+
+    </view>
+    <!-- 信息显示区 -->
+    <view class="info">
+      <!-- 名字 -->
+      <view class="name" wx:if="{{!userInfo.avatarUrl}}" bindtap="closeTank">点击登陆</view>
+      <view wx:if="{{userInfo.avatarUrl}}" class="name">
+        <view class="userinfo_nickname">{{userInfo.nickName}}</view>
+      </view>
+
+      <!-- 排名信息 -->
+      <view class="rank-section1">
+        <view class="rank-row">
+          <view class="rank-id">绑定ID:{{userInfo.steam}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="profile">
+    <view class="info-play">
+      <view class="rank-section">
+        <view class="rank-row">
+          <view class="rank-title">总排名</view>
+          <view class="rank-title">游戏排名</view>
+          <view class="rank-title">coop等级</view>
+        </view>
+        <view class="rank-row" style="margin-bottom: 5px;">
+          <view class="rank-value">{{person.totalRank}}</view>
+          <view class="rank-value">
+            <image src="{{person.gameIcon}}" class="rank-icon"></image>{{person.gameRank}}
+          </view>
+          <view class="rank-value">
+            <image src="{{person.coopIcon}}" class="rank-icon"></image>{{person.coopRank}}
+          </view>
+        </view>
+        <view class="additional-info">
+          <view class="info-column">1p:{{person.info1}}</view>
+          <view class="info-column">2p:{{person.info2}}</view>
+          <view class="info-column">3p:{{person.info3}}</view>
+          <view class="info-column">4p:{{person.info4}}</view>
+        </view>
+      </view>
+
+
+      <!-- 更多信息 -->
+
+
+      <view class="additional-info">
+        <view class="info-column">
+          <image src="cloud://rebecca-2gbizwon5538bd4f.7265-rebecca-2gbizwon5538bd4f-1306855380/lottery/award_shell.png" class="rank-icon"></image>:{{person.shell}}
+        </view>
+        <view class="info-column">
+          <image src="cloud://rebecca-2gbizwon5538bd4f.7265-rebecca-2gbizwon5538bd4f-1306855380/lottery/award_ice.png" class="rank-icon"></image>:{{person.ice}}
+        </view>
+        <view class="info-column">
+          <image src="cloud://rebecca-2gbizwon5538bd4f.7265-rebecca-2gbizwon5538bd4f-1306855380/lottery/award_candy.png" class="rank-icon"></image>:{{person.candy}}
+        </view>
+        <view class="info-column">
+          <image src="cloud://rebecca-2gbizwon5538bd4f.7265-rebecca-2gbizwon5538bd4f-1306855380/lottery/award_item_extend.png" class="rank-icon"></image>:{{person.extend_tool}}
+        </view>
+      </view>
+
+      <view class="rank-section">
+        <view class="rank-row">
+          <view class="rank-id-task">本月主题：<image src="{{person.topicurl}}" class="rank-icon"></image> {{person.topic}} 下月主题：<image src="{{person.nexttopicurl}}" class="rank-icon"></image> {{person.nexttopic}}</view>
+        </view>
+        <view>
+          <view class="rank-id-task" style="margin-bottom: 5px;">赛季剩余时间:{{person.time}}</view>
+        </view>
+      </view>
+
+      <view class="rank-section">
+        <view class="rank-row">
+          <view class="rank-id-task">当前任务({{person.quest_finish_count}}/4):{{person.task}}</view>
+        </view>
+        <view>
+          <view class="rank-id-task">下次任务刷新时间:{{person.tasktime}}</view>
+        </view>
+        <view>
+          <view class="rank-id-task" style="margin-bottom: 5px;">通关任务刷新时间:{{person.passTasktime}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view wx:if="{{userInfo&&userInfo.nickName}}">
+    <view class="list-item" bindtap="goPlayInfo" style="margin-top:16px;" >快捷换英雄</view>
+  </view>
+  <view wx:if="{{userInfo&&userInfo.nickName}}">
+    <view class="list-item" bindtap="goChange">更换绑定ID</view>
+  </view>
+  <view wx:if="{{userInfo&&userInfo.nickName}}">
+    <view class="list-item"  bindtap="tuichu">退出登录</view>
+  </view>
+</view>
+
+
+
+<!-- 头像昵称基本信息弹框 -->
+<view>
+  <view class="userInfo_tank_bg" bindtap="closeTank" wx:if="{{userInfo_tank}}"></view>
+  <view class="userInfo_tank {{userInfo_tank?'transfromjoin':'transfromout'}}">
+    <view class="tank_title">
+      <text>申请获取您的头像、昵称</text>
+    </view>
+    <view class="tank_content">
+      <text>头像：</text>
+      <button class="avatar_button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar_url" src="{{avatarUrl}}"></image>
+      </button>
+    </view>
+    <view class="tank_content">
+      <text>昵称：</text>
+      <input form-type='submit' bindblur="getNickName" placeholder="请输入昵称" type="nickname" />
+    </view>
+    <view class="confirm_button">
+      <view>
+        <button bindtap="closeTank">拒绝</button>
+      </view>
+      <view>
+        <button bindtap="submit" type="primary">允许</button>
+      </view>
+    </view>
+  </view>
+</view>

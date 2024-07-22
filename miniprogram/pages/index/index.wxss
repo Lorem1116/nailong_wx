@@ -1,0 +1,256 @@
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 保持子元素在交叉轴上居中对齐 */
+  justify-content: flex-start; /* 使子元素靠顶部对齐 */
+  min-height: 100vh; /* 确保容器至少与视口一样高 */
+}
+
+.search-button {
+  background-color: #606c38;
+  color: #FFFFFF;
+  padding: 0 15px; /* 移除垂直方向的padding，使用height来确定高度 */
+  border-radius: 15px;
+  border: none;
+  font-size: 14px;
+  height: 30px; /* 设置按钮高度 */
+  width: 90% !important;
+  margin-top: 10px;
+  line-height: 30px; /* 通过line-height实现文字的垂直居中 */
+  display: inline-block; /* 确保line-height生效 */
+  text-align: center; /* 确保文字水平居中 */
+}
+
+.profile {
+  display: flex;
+  width: 90%;
+  margin-top: 15px;
+  background-color: #e9edc9;
+  border-radius: 15px;
+  position: relative;
+}
+
+.profile::before {
+  content: '';
+  position: absolute;
+  top: -3px; /* 伪元素稍微扩展到.profile的外部 */
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 15px; /* 保持与.profile一致的边框圆角 */
+  z-index: -1; /* 确保边框在内容下方 */
+  background: linear-gradient(60deg, #606c38, #a3b18a, #fefae0);
+  background-size: 300% 300%;
+  animation: AnimateBorder 10s ease infinite;
+  box-shadow: 0 0 0 2px #e9edc9; /* 添加一个匹配背景颜色的外阴影来模拟边框 */
+  outline: 2px solid transparent; /* 添加外轮廓以保持间隔 */
+}
+
+@keyframes AnimateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* 其他样式保持不变，仅展示修改或新增的部分 */
+
+.avatar-container {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;/* 确保头像不会紧贴边缘 */
+}
+
+.avatar {
+  width: 80px; /* 或根据您的设计调整 */
+  height: 80px; /* 使之为圆形 */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #283618; /* 头像边框 */
+  animation: rotate 10s linear infinite; /* 旋转动画 */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* 增加 */
+  padding: 10px;
+}
+
+.name {
+  width: 100%;
+  text-align: center;
+  color: #283618;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
+.rank-row {
+  display: flex; /* 启用Flexbox */
+  justify-content: space-around; /* 子项之间分布空间 */
+  width: 100%; /* 确保父容器宽度充满其父元素 */
+}
+
+.rank-title, .rank-value {
+  flex: 1; /* 平均分配空间 */
+  text-align: center; /* 文字居中 */
+  color: #606c38;
+  font-size: 14px;
+  margin: 2px 0px; /* 稍微调整，简化写法 */
+  display: flex; /* 也为这些元素启用Flexbox */
+  align-items: center; /* 在垂直方向上居中 */
+  justify-content: center; /* 在水平方向上居中 */
+}
+
+
+.rank-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+
+/* 调整个人信息区的布局使之更灵活 */
+
+.additional-info {
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: space-around; /* 子元素之间有平均的空间 */
+  align-items: center; /* 子元素在交叉轴上居中对齐 */
+  width: 100%; /* 确保容器宽度充满其父元素 */
+  margin-top: 10px;
+
+}
+
+.info-column {
+  display: flex; /* 同样使用Flexbox布局 */
+  justify-content: center; /* 文本在容器内居中 */
+  align-items: center; /* 在交叉轴上居中对齐，适用于多行文本的情况 */
+  flex: 1; /* 确保所有列平等地分配容器的空间 */
+  text-align: center; /* 确保文本居中显示 */
+  color: #606c38;
+  font-size: 14px;
+  padding: 3px 5px; /* 避免文本贴紧到容器边缘 */
+}
+
+.rank-title:not(:last-child), .rank-value:not(:last-child), .info-column:not(:last-child) {
+  border-right: 1px solid #fff ; /* 浅色边框作为间隔 */
+}
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90% !important;
+  padding: 10px;
+  margin: 20px 10px 10px 10px;
+  border-radius: 15px;
+  background-color: #ccd5ae;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.hero-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90% !important;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #e9edc9;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hero-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hero-avatar-column, .hero-extra-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-details-column{
+  display: flex;
+}
+.hero-avatar-img, .hero-special-img {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin-top: -10rpx;
+}
+.hero-abilities {
+  display: flex; /* 关键改动，确保水平布局 */
+  flex-wrap: wrap; /* 若超出容器宽度则换行 */
+  justify-content: center; /* 居中显示 */
+  align-items: flex-start; /* 防止内容高度不一导致错位 */
+}
+
+.hero-ability-img {
+  width: 90rpx; /* 根据实际情况调整，保证一行可以放下 */
+  height: 120rpx;
+  margin-bottom: -10px;
+}
+
+.hero-ability-text {
+  text-align: center;
+  width: 95rpx; /* 与图片宽度保持一致 */
+  font-size: 8px;
+  margin-left: 1px;
+  margin-top: -7px;
+  letter-spacing:1px;
+  color: #E7D291;
+}
+
+.hero-special-text1 {
+  font-size: 22rpx;
+  margin-top: 3px;
+  text-align: center;
+  color: #666;
+}
+.hero-special-text2 {
+  font-size: 22rpx;
+  margin-top: 3px;
+  text-align: center;
+  color: #44F;
+}
+.hero-special-text3 {
+  font-size: 22rpx;
+  margin-top: 3px;
+  text-align: center;
+  color: #F0F;
+}
+.hero-special-text4 {
+  font-size: 22rpx;
+  margin-top: 3px;
+  text-align: center;
+  color: #F80;
+}

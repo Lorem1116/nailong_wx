@@ -1,0 +1,9 @@
+<!--pages/SearchSelect/SearchSelect.wxml-->
+<view class="container">
+  <picker bindchange="onPickerChange" range="{{yearList}}">
+    <view class="picker">
+      请选择: <text>{{selectedItem}} </text>
+    </view>
+  </picker>
+  <button class="confirm-btn" bindtap="onConfirm">确认</button>
+</view>

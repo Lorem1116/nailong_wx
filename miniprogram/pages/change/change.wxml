@@ -1,0 +1,6 @@
+<!--pages/change/change.wxml-->
+<view class="search-bar">
+      <input class="search-input" placeholder="请输入steamID" bindinput="updateInput" value="{{inputVal}}" />
+      <icon type="clear" class="delete" color="#606c38"  bindtap="clearInput"></icon>
+      <button class="search-btn" bindtap="doBinding">绑定</button>
+</view>

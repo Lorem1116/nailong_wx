@@ -1,0 +1,285 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 保持子元素在交叉轴上居中对齐 */
+  justify-content: flex-start; /* 使子元素靠顶部对齐 */
+  min-height: 100vh; /* 确保容器至少与视口一样高 */
+}
+
+.profile {
+  display: flex;
+  width: 90%;
+  margin-top: 15px;
+  background-color: #e9edc9;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
+/* 其他样式保持不变，仅展示修改或新增的部分 */
+
+.avatar-container {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  padding: 15px;/* 确保头像不会紧贴边缘 */
+}
+
+.avatar {
+  width: 70px; /* 或根据您的设计调整 */
+  height: 70px; /* 使之为圆形 */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #283618; /* 头像边框 */
+  animation: rotate 10s linear infinite; /* 旋转动画 */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* 增加 */
+  padding: 10px;
+}
+
+.info-play{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* 增加 */
+  padding: 10px;
+
+}
+
+.rank-section{
+  border-bottom:  1px #ccd5ae solid;
+}
+.rank-section:last-child{
+  border-bottom: none;
+}
+
+.rank-row {
+  display: flex; /* 启用Flexbox */
+  justify-content: space-around; /* 子项之间分布空间 */
+  width: 100%; /* 确保父容器宽度充满其父元素 */
+  
+}
+
+.rank-id{
+  text-align: left !important;
+  display: flex;
+  flex: 1;
+  color: #606c38;
+  font-size: 14px;
+  margin: 10px 0px;
+}
+
+.rank-id-task{
+  text-align: left !important;
+  align-items: center; /* 在垂直方向上居中 */
+  display: flex;
+  flex: 1;
+  color: #606c38;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.rank-title, .rank-value {
+  flex: 1; /* 平均分配空间 */
+  text-align: center; /* 文字居中 */
+  color: #606c38;
+  font-size: 14px;
+  margin: 2px 0px; /* 稍微调整，简化写法 */
+  display: flex; /* 也为这些元素启用Flexbox */
+  align-items: center; /* 在垂直方向上居中 */
+  justify-content: center; /* 在水平方向上居中 */
+}
+
+
+.rank-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+
+/* 调整个人信息区的布局使之更灵活 */
+
+.additional-info {
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: space-around; /* 子元素之间有平均的空间 */
+  align-items: center; /* 子元素在交叉轴上居中对齐 */
+  width: 100%; /* 确保容器宽度充满其父元素 */
+  margin-top: 3px;
+
+}
+
+.info-column {
+  display: flex; /* 同样使用Flexbox布局 */
+  justify-content: center; /* 文本在容器内居中 */
+  align-items: center; /* 在交叉轴上居中对齐，适用于多行文本的情况 */
+  flex: 1; /* 确保所有列平等地分配容器的空间 */
+  text-align: center; /* 确保文本居中显示 */
+  color: #606c38;
+  font-size: 14px;
+  padding: 3px 5px; /* 避免文本贴紧到容器边缘 */
+}
+
+.name {
+  display: flex;          /* 设置flex布局 */
+  align-items: center;    /* 垂直居中 */
+  text-align: left !important;
+  color: #283618;
+  font-size: 36rpx;
+  margin-top: 10px;
+}
+
+.userinfo_nickname {
+  font-size: 40rpx;
+  flex-grow: 1;           /* 允许这个元素扩展，占据多余空间 */
+}
+
+
+/* 授权弹窗 */
+.userInfo_tank_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background: #000;
+  z-index: 666;
+}
+
+.userInfo_tank {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  border-radius: 30rpx 30rpx 0 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+  z-index: 999999;
+}
+
+.transfromjoin {
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.transfromout {
+  transition: all 0.3s;
+  margin-bottom: -700rpx;
+}
+
+.avatar_url {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.tank_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  height: 100rpx;
+}
+
+.tank_content text {
+  color: #787376;
+}
+
+.tank_content input {
+  width: 80%;
+  text-align: right;
+}
+
+.tank_title {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30rpx;
+  font-weight: 700;
+}
+
+.confirm_button {
+  display: flex;
+  margin: 50rpx 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm_button view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.pos_photo {
+  position: absolute;
+  bottom: 0;
+  right: -10rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pos_photo text {
+  font-size: 25rpx !important;
+  color: #fff;
+}
+
+.avatar {
+  position: relative;
+}
+
+.confirm_button view button {
+  width: 90%;
+}
+
+.default_button {
+  width: none !important;
+  margin: 0 !important;
+  padding: 10rpx 20rpx !important;
+  width: 260rpx !important;
+  font-weight: 600 !important;
+  font-size: 32rpx !important;
+}
+
+.avatar_button {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 80rpx !important;
+  height: 80rpx !important;
+  border-radius: 50% !important;
+  font-size: 32rpx !important;
+  overflow: visible !important;
+}
+
+.list-item {
+  text-decoration: none;
+  color: #606c38;
+  background-color: #e9edc9;
+  padding: 15px;
+  width: 85vw;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: block;
+}

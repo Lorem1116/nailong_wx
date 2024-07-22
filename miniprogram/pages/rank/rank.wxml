@@ -1,0 +1,25 @@
+<view class="container">
+  <picker bindchange="pickerChange" range="{{pickerArray}}" class="picker">
+    <view class="picker-view">
+     当前选择：{{pickerArray[pickerIndex]}}</view>
+  </picker>
+  <view class="list">
+    <view class="list-item" wx:for="{{rankList}}" wx:key="index">
+      <view class="rank">{{index + 1}}</view>
+      <view class="avatars" wx:for="{{item.avatars}}" wx:key="index">
+        <image src="{{item.avatar}}" class="avatar" bind:tap="pickAvatar" data-player="{{item.player}}">
+        </image>
+      </view>
+      <button class="score-button" bindtap="showFloatingDiv" data-game="{{item.towers}}" data-id="{{pickerIndex}}{{item.score}}">{{item.score}}(+{{item.elites}})</button>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class="floating-div" hidden="{{game.showFloatingDiv}}" style="{{game.positionStyle}}">
+    <view wx:for="{{game.info}}" wx:key="index">
+      <view>{{item.key}}: {{item.value}}</view>
+    </view>
+    <view>手数: {{game.counters}}</view>
+    <view wx:for="{{game.towers}}" wx:key="index">
+      <view>{{item.value}}x <text class="info{{item.level}}">{{item.name}}</text></view>
+    </view>
+  </scroll-view>
+</view>

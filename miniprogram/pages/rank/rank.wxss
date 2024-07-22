@@ -1,0 +1,106 @@
+
+.container {
+  padding: 20rpx;
+}
+
+.picker {
+  margin-bottom: 20rpx;
+}
+
+.picker-view {
+  padding: 20rpx;
+  background-color: #e9edc9;
+  border-radius: 10rpx;
+}
+
+.list {
+  width: 90%; /* 调整宽度 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 给榜单添加阴影 */
+  border: 1px solid #dcdcdc; /* 添加边框 */
+  border-radius: 5px; /* 圆角 */
+  background-color: #e9edc9; /* 背景色 */
+  margin-top: 10px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px; /* 增加内边距 */
+  border-bottom: 1px solid #eee; /* 调整边框颜色 */
+}
+
+.list-item:last-child {
+  border-bottom: none; /* 最后一个项目没有底边 */
+}
+
+.rank, .score {
+  flex-basis: 10%;
+  text-align: center;
+  font-weight: bold; /* 字体加粗 */
+  color: #606c38; /* 字体颜色 */
+}
+
+.avatars {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 40px; /* 调整头像大小 */
+  height: 40px; /* 调整头像大小 */
+  border-radius: 50%;
+  margin: 0 5px; /* 调整间距 */
+  border: 2px solid #606c38; /* 头像边框 */
+}
+
+.score-button {
+  background-color: #606c38; /* 绿色背景 */
+  color: white; /* 白色文字 */
+  max-width: 80px;
+  padding: 5px 2px; /* 填充 */
+  border-radius: 20px; /* 圆角 */
+  border: none; /* 去掉默认边框 */
+  font-weight: bold; /* 字体加粗 */
+  font-size: 14px; /* 字体大小 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+  outline: none; /* 去掉点击时的轮廓线 */
+  cursor: pointer; /* 鼠标悬停时的手型光标 */
+}
+
+.score-button:hover {
+  background-color: #3e8e41; /* 鼠标悬停时的背景色 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 鼠标悬停时的阴影效果 */
+}
+
+.floating-div {
+  position: fixed;
+  background-color: #fefae0;
+  width: 220px;
+  height: 400px;
+  /* 如果之前设置了高度，可能需要调整或移除 */
+  padding: 10px;
+  box-sizing: border-box;
+  border: #606c38 1px solid;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 100; /* 确保浮窗在最上层 */
+}
+
+
+.info0{
+  color: #666;
+}
+.info1{
+  color: blue;
+}
+.info2{
+  color: #F0F;
+}
+.info3{
+  color: #F80;
+}
+.info4{
+  color: red;
+}

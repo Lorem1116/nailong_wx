@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="list">
+    <view class="list-item" bindtap="navigateTo" data-url="/pages/rank/rank">当前榜单</view>
+    <view class="list-item" bindtap="navigateTo" data-url="/pages/SearchSelect/SearchSelect">岁月史书（每月末更新）</view>
+    <view class="list-item" bindtap="navigateTo" data-url="/pages/ursol/ursol">旋风模拟器(内测版)</view>
+    <view class="list-item" bindtap="navigateTo" data-url="/pages/page3/page3">未完待续，欢迎指教</view>
+  </view>
+</view>

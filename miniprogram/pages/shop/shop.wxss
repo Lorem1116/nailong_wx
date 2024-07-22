@@ -1,0 +1,89 @@
+/* pages/shop/shop.wxss */
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rpx;
+  color: #f0f0f0;
+}
+
+.footer {
+  background-color: #ccd5ae;
+  color: #606c38;
+  height: 30px;
+  line-height:30px;
+  width: 100%; /* 调整以适应实际需求 */
+  text-align: center;
+}
+
+.title1 {
+  background-color: #666;
+  height: 30px;
+  line-height:30px;
+  width: 100%; /* 调整以适应实际需求 */
+  text-align: center;
+}
+.title2 {
+  background-color: #44F;
+  height: 30px;
+  line-height:30px;
+  width: 100%; /* 调整以适应实际需求 */
+  text-align: center;
+}
+.title3 {
+  background-color: #F0F;
+  height: 30px;
+  line-height:30px;
+  width: 100%; /* 调整以适应实际需求 */
+  text-align: center;
+}
+.title4 {
+  background-color: #F80;
+  height: 30px;
+  line-height:30px;
+  width: 100%; /* 调整以适应实际需求 */
+  text-align: center;
+}
+
+.icon {
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 1px;
+}
+
+.image {
+  width: 180rpx; /* 调整以适应实际需求 */
+  height: 240rpx !important; /* 调整以适应实际需求 */
+}
+.image-sale{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  top: 60rpx;
+  right: 5rpx;
+}
+
+.times{
+  color: #606c38;
+  margin-bottom: 10px;
+}

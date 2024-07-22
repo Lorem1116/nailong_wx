@@ -1,0 +1,57 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/login/login",
+    "pages/shop/shop",
+    "pages/SearchSelect/SearchSelect",
+    "pages/utils/utils",
+    "pages/ursol/ursol", 
+    "pages/search/search",
+    "pages/rank/rank",
+    "pages/history/history",
+    "pages/playerInfo/playerInfo",
+    "pages/change/change"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "奶龙无敌机器人",
+    "navigationBarBackgroundColor": "#fefae0"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#283618",
+    "borderStyle": "black",
+    "backgroundColor": "#faedcd",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon/a-robot3.png",
+        "selectedIconPath": "static/icon/a-robothead-1.png",
+        "text": "换英雄"
+      },
+      {
+        "pagePath": "pages/utils/utils",
+        "iconPath": "static/icon/ranks.png",
+        "selectedIconPath": "static/icon/ranks-2.png",
+        "text": "实用工具"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "iconPath": "static/icon/cash.png",
+        "selectedIconPath": "static/icon/a-mobilepayment.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "iconPath": "static/icon/jiudian.png",
+        "selectedIconPath": "static/icon/a-wuxingjijiudian.png",
+        "text": "关于我"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

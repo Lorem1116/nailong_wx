@@ -1,0 +1,15 @@
+<view class="container">
+  <p class="times">距离下次刷新还有：{{time}}</p>
+  <block wx:for="{{rows}}" wx:key="row">
+    <view class="row">
+      <block wx:for="{{item}}" wx:key="item">
+        <view class="item">
+          <view class="title{{item.level}}">{{item.title}}</view>
+          <image class="image" src="{{item.imageSrc}}"></image>
+          <image class="image-sale" hidden="{{item.onsale}}" src="cloud://rebecca-2gbizwon5538bd4f.7265-rebecca-2gbizwon5538bd4f-1306855380/lottery/sale.png"></image>
+          <view class="footer"><image src="{{item.icon}}" class="icon"></image>✖️{{item.footer}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

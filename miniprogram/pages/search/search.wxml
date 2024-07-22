@@ -1,0 +1,24 @@
+<view class="search-container">
+    <!-- 搜索栏 -->
+    <view class="search-bar">
+      <input class="search-input" placeholder="请输入搜索内容" bindinput="updateInput" value="{{inputVal}}" />
+      <icon type="clear" class="delete" color="#606c38"  bindtap="clearInput"></icon>
+      <button class="search-btn" bindtap="doSearch">搜索</button>
+    </view>
+    
+    <!-- 历史搜索 -->
+    <view class="history-search">
+        <view class="title">
+            历史搜索
+            <button class="clear-all" bindtap="clearHistory">清空</button>
+        </view>
+        <view class="tags">
+            <block wx:for="{{history}}" wx:key="item">
+                <view class="tag" bindtap="searchFromHistory" data-hero="{{item.id}}">
+                  {{item.id}}:{{item.name}}
+                  <icon type="clear" class="delete-icon" size="20" color="#606c38"  catchtap="deleteItem" data-index="{{index}}"></icon>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

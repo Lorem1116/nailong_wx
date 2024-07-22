@@ -1,0 +1,90 @@
+<view class="container">
+  <!-- 搜索按钮 -->
+  <button class="search-button" bindtap="navigateToSearch">搜索</button>
+  <!-- 个人信息栏 -->
+  <view class="profile">
+    <!-- 头像 -->
+    <view class="avatar-container">
+      <image class="avatar" src="{{person.avatarUrl}}"></image>
+    </view>
+    <!-- 信息显示区 -->
+    <view class="info">
+      <!-- 名字 -->
+      <view class="name">{{person.name}}</view>
+
+      <!-- 排名信息 -->
+      <view class="rank-section">
+        <view class="rank-row">
+          <view class="rank-title">总排名</view>
+          <view class="rank-title">游戏排名</view>
+          <view class="rank-title">coop等级</view>
+        </view>
+        <view class="rank-row">
+          <view class="rank-value">{{person.totalRank}}</view>
+          <view class="rank-value">
+            <image src="{{person.gameIcon}}" class="rank-icon"></image>{{person.gameRank}}
+          </view>
+          <view class="rank-value">
+            <image src="{{person.coopIcon}}" class="rank-icon"></image>{{person.coopRank}}
+          </view>
+        </view>
+      </view>
+
+      <!-- 更多信息 -->
+      <view class="additional-info">
+        <view class="info-column">1p:{{person.info1}}</view>
+        <view class="info-column">2p:{{person.info2}}</view>
+        <view class="info-column">3p:{{person.info3}}</view>
+        <view class="info-column">4p:{{person.info4}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="hero-container">
+    <text class="hero-title">当前英雄</text>
+    <view class="hero-row">
+      <!-- 第一列：头像 -->
+      <view class="hero-avatar-column">
+        <image class="hero-avatar-img" src="{{ondutyHero.hero}}"></image>
+        <text class="hero-special-text{{ondutyHero.herolevel}}">{{ondutyHero.heroName}}</text>
+      </view>
+
+      <!-- 第二列：图片和文字 -->
+      <view class="hero-details-column">
+        <view class="hero-abilities" wx:for="{{ondutyHero.ability}}" wx:key="item">
+          <image class="hero-ability-img" src="{{item.ability}}"></image>
+          <text class="hero-ability-text">{{item.skillevel}}</text>
+        </view>
+      </view>
+
+      <!-- 第三列：特殊图片和文字 -->
+      <view class="hero-extra-column">
+        <image class="hero-special-img" src="{{ondutyHero.effectUrl}}" ></image>
+        <text class="hero-special-text{{ondutyHero.effectLevel}}">{{ondutyHero.effect}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="hero-container1" wx:for="{{heroList}}" wx:key="item">
+    <text class="hero-title">点击英雄头像更换英雄</text>
+    <view class="hero-row">
+      <!-- 第一列：头像 -->
+      <view class="hero-avatar-column">
+        <image class="hero-avatar-img" bind:tap="setOnDutyHero" data-hero="{{item}}" src="{{item.hero}}"></image>
+        <text class="hero-special-text{{item.herolevel}}">{{item.heroName}}</text>
+      </view>
+
+      <!-- 第二列：图片和文字 -->
+      <view class="hero-details-column">
+        <view class="hero-abilities" wx:for="{{item.ability}}" wx:key="index">
+          <image class="hero-ability-img" src="{{item.ability}}"></image>
+          <text class="hero-ability-text">{{item.skillevel}}</text>
+        </view>
+      </view>
+
+      <!-- 第三列：特殊图片和文字 -->
+      <view class="hero-extra-column">
+        <image class="hero-special-img" src="{{item.effectUrl}}"></image>
+        <text class="hero-special-text{{item.effectLevel}}">{{item.effect}}</text>
+      </view>
+    </view>
+  </view>
+</view>

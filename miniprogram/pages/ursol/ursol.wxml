@@ -1,0 +1,118 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="left-panel">
+    <view class="grid" style="{{grid_clsss}}">
+      <!-- 循环每个格子 -->
+      <block wx:for="{{gridCells}}" wx:key="id">
+        <view style="{{cell_class}}" class="cell {{item.row == 7 ? 'special-row' : ''}} {{item.col == 7 ? 'special-col' : ''}}" data-id="{{item.id}}" bindtap="onCellTap" >
+          <image src="{{item.imageUrl}}" mode="aspectFill" class="cell-image"></image>
+          <text class="class_text" wx:if="{{item.max}}">M</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="right-panel">
+    <view>
+      使用金钱:{{gold}}
+    </view>
+    <view class="button">
+      <button class="score-button" bindtap="usestone" data-id="0">预设1</button>
+      <button class="score-button" bindtap="usestone" data-id="1">预设2</button>
+      <button class="score-button" bindtap="emptystone" data-id="2">全部清空</button>
+    </view>
+    <view class="button">
+      <button class="score-button" bindtap="ursol" data-id="2">旋风!</button>
+      <button class="score-button" bindtap="exchange" data-id="2">交换</button>
+      <button class="score-button" bindtap="stop" data-id="2">停止旋风/交换</button>
+    </view>
+    <view class="button">
+      <button class="score-button" bindtap="huancun" data-id="1">缓存1</button>
+      <button class="score-button" bindtap="huancun" data-id="2">缓存2</button>
+      <button class="score-button" bindtap="huancun" data-id="3">缓存3</button>
+    </view>
+    <view class="button">
+      <button class="score-button" bindtap="zairu" data-id="1">载入缓存1</button>
+      <button class="score-button" bindtap="zairu" data-id="2">载入缓存2</button>
+      <button class="score-button" bindtap="zairu" data-id="3">载入缓存3</button>
+    </view>
+    <view class="button">
+      <button class="score-button" bindtap="lastclip" data-id="2">上一步（没做）</button>
+      <button class="score-button" bindtap="nextclip" data-id="2">下一步（没做）</button>
+      <button class="score-button" bindtap="emptygold" data-id="2">清空金钱</button>
+    </view>
+    <!-- <view class="button">
+      <button class="score-button" bindtap="lastclip" data-id="2">上一步</button>
+      <button class="score-button" bindtap="nextclip" data-id="2">下一步</button>
+      <button class="score-button" bindtap="delclip" data-id="2">清空步数</button>
+    </view> -->
+    <!-- <view class="button">
+      <button class="score-button" bindtap="ursol" data-id="2">开始保存路径</button>
+      <button class="score-button" bindtap="zairu" data-id="2">导出路径</button>
+    </view> -->
+
+  </view>
+
+  <!-- 弹出框视图 -->
+  <scroll-view scroll-y="true" class="popup" wx:if="{{showPopup}}">
+    <view class="popup-content">
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls1}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls2}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls3}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls4}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls5}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls6}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls7}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls8}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls9}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls10}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="image-gallery">
+        <block wx:for="{{imageUrls11}}" wx:key="url">
+          <image src="{{item}}" mode="aspectFill" class="gallery-image" bindtap="selectImage" data-url="{{item}}"></image>
+        </block>
+      </view>
+      <view class="close-btn" bindtap="closePopup">X</view>
+      <view class="close-emptyImage" bindtap="emptyImage" data-url="{{item}}">清</view>
+      <view class="close-Max" bindtap="setMax" data-url="{{item}}">M</view>
+    </view>
+  </scroll-view>
+</view>

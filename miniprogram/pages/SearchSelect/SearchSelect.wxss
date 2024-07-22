@@ -1,0 +1,33 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.picker {
+  background-color: #e9edc9; /* 淡绿色背景，像树叶 */
+  border-radius: 30px; /* 更圆润的边缘 */
+  padding: 15px 20px; /* 增加填充使按钮看起来更大 */
+  margin-bottom: 20px;
+  color: #333; /* 森林绿文字颜色 */
+  text-align: center; /* 文本居中 */
+  width: 100%; /* 下拉菜单宽度 */
+  margin-top: 45%;
+  box-sizing: border-box;
+}
+
+.confirm-btn {
+  background-color: #606c38; /* 森林绿背景颜色 */
+  color: #fff; /* 白色文字 */
+  border-radius: 30px; /* 圆润边缘 */
+  padding: 20rpx 20rpx; /* 更大的按钮 */
+  border: none; /* 移除边框 */
+  font-size: 30rpx; /* 更大的文字 */
+  width: 80%; /* 按钮宽度 */
+  height: 80rpx;
+  text-align: center; /* 文本居中 */
+  display: block; /* 块状元素 */
+  margin: 0 auto; /* 自动外边距实现水平居中 */
+}

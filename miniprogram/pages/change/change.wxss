@@ -1,0 +1,39 @@
+/* pages/change/change.wxss */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid #606c38; /* 可爱风格的边框颜色 */
+  border-radius: 20px; /* 圆润边角 */
+  padding: 5px;
+  height: 30px; /* 设置按钮高度 */
+  line-height: 30px; /* 通过line-height实现文字的垂直居中 */
+}
+
+.search-input {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 10px;
+  border: none;
+}
+
+.delete {
+  margin-top: 10rpx;
+  font-size: 50rpx;
+  margin-right: 3px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.search-btn {
+  width: 100rpx !important;
+  height: 60rpx !important;
+  background-color: #606c38; /* 可爱风格按钮 */
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 5px 10px;
+  color: white;
+}
